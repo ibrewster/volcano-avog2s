@@ -41,7 +41,7 @@ SYSTEM = gfortran
 #    This variable cannot be left blank
 RUN = OPT
 #
-INSTALLDIR=/usr/local
+INSTALLDIR=@prefix@
 #
 # DATA FORMATS
 #  For each data format you want to include in the library, set the corresponding
@@ -94,7 +94,7 @@ ifeq ($(USEGRIB2), T)
  #DATALIBS =  -lnetcdf -lnetcdff -lgrib_api_f90 -lgrib_api
  # These are the libraries for ecCodes
  #DATALIBS =  -lnetcdf -lnetcdff -leccodes -leccodes_f90
- DATALIBS=-lnetcdf -lnetcdff -leccodes -leccodes_f90
+ DATALIBS=@DATALIBS@
  grb2FPPFLAG = -DUSEGRIB2
 else
  DATALIBS =  -lnetcdf -lnetcdff
@@ -112,7 +112,7 @@ EXTRALIBS = -L$(SHTOOLROOT)/lib -I$(SHTOOLINC) $(DATALIBS) -l$(SHTlib) -lfftw3 -
 ###########  GNU Fortran Compiler  #############################################
 #ifeq ($(SYSTEM), gfortran)
     FCHOME=/usr
-    FC = /usr/local/bin/gfortran
+    FC = @GFORTRAN_DIR@
 
     COMPINC = -I$(FCHOME)/include -I$(FCHOME)/local/include -I$(FCHOME)/lib64/gfortran/modules
     COMPLIBS = -L$(FCHOME)/lib64 -L$(FCHOME)/lib -L$(FCHOME)/local/lib
