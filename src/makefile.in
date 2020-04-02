@@ -111,7 +111,7 @@ EXTRALIBS = -L$(SHTOOLROOT)/lib -I$(SHTOOLINC) $(DATALIBS) -l$(SHTlib) -lfftw3 -
 ###########  GNU Fortran Compiler  #############################################
 #ifeq ($(SYSTEM), gfortran)
     FCHOME=/usr
-    FC = /usr/local/bin/gfortran
+    FC = @GFORTRAN_DIR@
 
     COMPINC = -I$(FCHOME)/include -I$(FCHOME)/local/include -I$(FCHOME)/lib64/gfortran/modules
     COMPLIBS = -L$(FCHOME)/lib64 -L$(FCHOME)/lib -L$(FCHOME)/local/lib
