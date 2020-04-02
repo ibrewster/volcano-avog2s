@@ -14,11 +14,11 @@ AC_CHECK_LIB([MetReader], [main])
 # FIXME: Replace `main' with a function in `-lfftw3':
 AC_CHECK_LIB([fftw3], [main])
 # FIXME: Replace `main' with a function in `-lgrib_api':
-AC_CHECK_LIB([grib_api], [main])
+AC_CHECK_LIB([eccodes], [main],[],[AC_MSG_ERROR([Required library "grib_api" not found])])
 # FIXME: Replace `main' with a function in `-lgrib_api_f90':
-AC_CHECK_LIB([grib_api_f90], [main])
+AC_CHECK_LIB([eccodes_f90], [main],[],[AC_MSG_ERROR([Required library "eccodes_f90" not found])])
 # FIXME: Replace `main' with a function in `-lhourssince':
-AC_CHECK_LIB([hourssince], [main])
+AC_CHECK_LIB([hourssince], [main],[],[AC_MSG_ERROR([Required library "hourssince" not found])])
 # FIXME: Replace `main' with a function in `-llapack':
 AC_CHECK_LIB([lapack], [main])
 # FIXME: Replace `main' with a function in `-lm':
