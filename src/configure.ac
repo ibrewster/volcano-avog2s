@@ -4,8 +4,6 @@
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 
-# Checks for programs.
-# AC_PROG_INSTALL
 AC_PATH_PROG([GFORTRAN_DIR],[gfortran])
 AC_SUBST([GFORTRAN_DIR])
 
@@ -54,7 +52,7 @@ fi
 AC_SUBST([DATALIBS])
 
 # FIXME: Replace `main' with a function in `-lhourssince':
-AC_CHECK_LIB([hourssince], [main])
+AC_CHECK_LIB([hourssince], [main],[],[AC_MSG_ERROR([Required library "hourssince" not found])])
 # FIXME: Replace `main' with a function in `-llapack':
 AC_CHECK_LIB([lapack], [main])
 # FIXME: Replace `main' with a function in `-lm':
