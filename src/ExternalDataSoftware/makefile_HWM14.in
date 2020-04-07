@@ -1,6 +1,6 @@
 # Example *nix/mac makefile (trivial)
 
-INSTALLDIR=@prefix@/AVOG2S
+INSTALLDIR=@prefix@
 HWMPATH=${INSTALLDIR}/ExternalData/HWM14
 
 FOR95 = gfortran

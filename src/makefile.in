@@ -84,7 +84,7 @@ USGSROOT=/opt/USGS
 ###############################################################################
 
 # This is where HWM and NRLMSIS are installed
-AVOG2SINSTALLDIR=$(INSTALLDIR)/AVOG2S
+AVOG2SINSTALLDIR=$(INSTALLDIR)
 HWMPATH=$(AVOG2SINSTALLDIR)/ExternalData/HWM$(HWMv)
 HWTLIB=-L$(AVOG2SINSTALLDIR)/lib -lnrlmsis -lHWM$(HWMv) -I$(AVOG2SINSTALLDIR)/include
 
