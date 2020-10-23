@@ -51,6 +51,11 @@ fi
 
 AC_SUBST([DATALIBS])
 
+# Check for linuxbrew paths
+AC_CHECK_FILE([/home/linuxbrew/.linuxbrew],[OTHERLIBS="-L/home/linuxbrew/.linuxbrew/lib"; OTHERINC="-I/home/linuxbrew/.linuxbrew/include";])
+AC_SUBST([OTHERLIBS])
+AC_SUBST([OTHERINC])
+
 # FIXME: Replace `main' with a function in `-lhourssince':
 AC_CHECK_LIB([hourssince], [main],[],[AC_MSG_ERROR([Required library "hourssince" not found])])
 # FIXME: Replace `main' with a function in `-llapack':
